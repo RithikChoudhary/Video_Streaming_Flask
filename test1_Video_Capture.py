@@ -1,9 +1,8 @@
 import cv2
 
-
 cap = cv2.VideoCapture(0)
 def captureimage():
-    # fourcc = cv2.VideoWriter_fourcc(*'XVID')
+    
     while True:
         ret,frame = cap.read()
     
