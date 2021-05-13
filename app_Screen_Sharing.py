@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 from types import FrameType
 import cv2
 from flask import Flask, render_template, Response,url_for
@@ -12,7 +11,6 @@ def index():
 def gen():
     while True:
         cap = pyautogui.screenshot()
-        # ret,frame = cap.read()
         frame= np.array(cap)
         (flag,encodeImage) = cv2.imencode(".jpg",frame)
         yield (b'--frame\r\n'
