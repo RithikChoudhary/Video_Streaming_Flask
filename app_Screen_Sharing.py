@@ -1,9 +1,8 @@
-from types import FrameType
 import cv2
 from flask import Flask, render_template, Response,url_for
-import imutils
 import numpy as np
 import pyautogui
+
 app = Flask(__name__,template_folder='template')
 @app.route('/')
 def index():
