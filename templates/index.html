@@ -5,8 +5,10 @@
         <table class="table">
             <tbody>
                 <tr>
+                    {% if screencap %}
                     <td scope="row"> <img src="{{ url_for('screencap') }}" width="100%"></td>
-                     <td scope="row"> <img src="{{ url_for('video_feed') }}" width="100%"></td>
+                    {% endif %}
+                    <td scope="row"> <img src="/video_feed" width="100%"></td>
                 </tr>               
             </tbody>
         </table>          
