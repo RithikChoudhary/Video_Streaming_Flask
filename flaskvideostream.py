@@ -115,6 +115,7 @@ def livestream_webcam_response() -> Response:
 	and returns a robust
 	Flask-Response object
 	'''
+	global _my_webcam
 
 	# Create _webcam_sharing if not created
 	if not _my_webcam:
@@ -133,6 +134,7 @@ def livestream_screen_response() -> Response:
 	and returns a robust
 	Flask-Response object
 	'''
+	global _my_screen
 
 	# Create _screen_sharing if not created
 	if not _my_screen:

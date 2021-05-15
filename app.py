@@ -2,7 +2,7 @@
 from flask import Flask, render_template
 
 # Our Core Live Stream Function
-from core import livestream_webcam_response, livestream_screen_response
+from flaskvideostream import livestream_webcam_response, livestream_screen_response
 
 server = Flask(__name__)
 
