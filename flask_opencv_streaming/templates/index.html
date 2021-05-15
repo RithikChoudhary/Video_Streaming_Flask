@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Flask Opencv VideoStreaming</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script>
+      function show(activate_item) {
+        if (activate_item == "webcam") deactivate_item = "screen";
+        else deactivate_item = "webcam";
+
+        document
+          .getElementById(activate_item + "-button")
+          .classList.add("active");
+        document
+          .getElementById(deactivate_item + "-button")
+          .classList.remove("active");
+
+        document.getElementById("output").innerHTML =
+          '<img class="img-responsive" src="/' +
+          activate_item +
+          '" alt="' +
+          activate_item +
+          ' feed will play here." style="width: 100%;">';
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col">
+        <div class="row mb-4 mt-4">
+          <h1 class="w-100 text-center">
+            <b> OpenCV - Flask video-streaming </b>
+          </h1>
+        </div>
+        <div class="row">
+          <h3 class="w-100 text-center" >Select what you wish to see</h3>
+        </div>
+        <div class="row mt-4">
+          <ul class="list-group list-group-horizontal w-100">
+            <button
+              id="webcam-button"
+              class="list-group-item list-group-item-action text-center"
+              onclick="show('webcam')"
+            >
+              WEBCAM
+            </button>
+            <button
+              id="screen-button"
+              class="list-group-item list-group-item-action text-center"
+              onclick="show('screen')"
+            >
+              SCREENSHARE
+            </button>
+          </ul>
+        </div>
+        <div class="row mt-4">
+          <div
+            id="output"
+            class="w-75 p-3"
+            style="
+              display: block;
+              margin: auto;
+              border: 1px black solid;
+              border-radius: 15px;
+            "
+          >
+					<i class="d-block m-auto text-center"><small> (click on the button of your choice above) </small><br><br>video feed will play here</i>
+					</div>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

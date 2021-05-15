@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "flask-opencv-streaming"
+version = "0.1.0"
+description = "Simple module to help capture frames in opencv and serve them on a local flask server"
+authors = ["Shreyas Ashtamkar <shreyu@programmer.net>", "Rithik Choudhary <burnt776@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+Flask = "^2.0.0"
+opencv-python = "4.5.1.48"
+PyAutoGUI = "^0.9.52"
+mss = "^6.1.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
