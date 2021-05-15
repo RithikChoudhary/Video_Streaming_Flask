@@ -16,6 +16,9 @@ from flask import Response
 # Annotation
 from typing import Generator
 
+_my_webcam = None
+_my_screen = None
+
 class __shareable(ABC):
 	'''
 	A general abstract class for 
@@ -104,8 +107,6 @@ class _screen_sharing(__shareable):
 				print(e)
 				exit(1)
 
-my_webcam = _webcam_sharing()
-my_screen = _screen_sharing()
 
 def livestream_webcam_response() -> Response:
 	'''
@@ -114,8 +115,13 @@ def livestream_webcam_response() -> Response:
 	and returns a robust
 	Flask-Response object
 	'''
+
+	# Create _webcam_sharing if not created
+	if not _my_webcam:
+		_my_webcam = _webcam_sharing()
+
 	return Response(
-		my_webcam.feed,
+		_my_webcam.feed,
 		mimetype='multipart/x-mixed-replace; boundary=frame'
 	)
 
@@ -127,7 +133,12 @@ def livestream_screen_response() -> Response:
 	and returns a robust
 	Flask-Response object
 	'''
+
+	# Create _screen_sharing if not created
+	if not _my_screen:
+		_my_screen = _screen_sharing()
+
 	return Response(
-		my_screen.feed,
+		_my_screen.feed,
 		mimetype='multipart/x-mixed-replace; boundary=frame'
 	)
