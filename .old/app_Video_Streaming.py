@@ -16,7 +16,7 @@ def gen():
         
         (flag,encodeImage) = cv2.imencode(".jpg",frame)
         yield (b'--frame\r\n'
-               b'Content-Type: image/jpeg\r\n\r\n' + bytearray(encodeImage) + b'\r\n')
+                b'Content-Type: image/jpeg\r\n\r\n' + bytearray(encodeImage) + b'\r\n')
 
 
 @app.route('/video_feed')
@@ -25,6 +25,8 @@ def video_feed():
 
 if __name__ == '__main__':
     try:
-        app.run()
+        app.run(debug=True)
     except Exception as e:
         print(e)
+    finally:
+        cap.release()
