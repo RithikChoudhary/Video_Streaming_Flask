@@ -1,10 +1,21 @@
-# FlaskIntroduction
+# Video Streaming Flask
 
-This repo has been updated to work with `Python v3.8` and up.
+## Introduction
 
-### How To Run
+This is a simple script to livestream a feed onto localhost using simple, easily installable and freely available modules.
 
-## ( I ) Create a Virtual Environment
+The Tech Stack is very simple. It is as below. 
+
+| Modules | MIN | MAX | USAGE |
+| -------------- | :------: | :------: | :------------: |
+| Python | 3.5 | 3.9 | base - code | 
+| flask | 2.0.0 | + | web server |
+| opencv-python | 4.5.1.45 | 4.5.1.48 | capture video  |
+| pyautogui | 0.9.52 | + | capture screen |
+
+## How To Run
+
+### ( I ) Create a Virtual Environment
 1. We use python's builting venv functionality:
     ```bash
     python -m venv myenv
@@ -25,7 +36,7 @@ This repo has been updated to work with `Python v3.8` and up.
     (myenv) $ pip install -r requirements.txt
     ```
 
-## ( II ) Run the app
+### ( II ) Run the app
 The app can be run by simply running te app.py file using python interpreter:
 
 ```bash
@@ -38,4 +49,3 @@ This server will start on port 5000 by default. You can change this in `app.py` 
 if __name__ == "__main__":
     app.run(debug=True, port=<desired port>)
 ```
-
